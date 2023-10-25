@@ -163,7 +163,7 @@ class TransformerEmbedWithRelations(nn.Module):
         pooling: str = 'mean',
         pad_index: int = 0,
         mix_dropout: float = .0,
-        atten_layer: int = 5,
+        atten_layer: int = 3,
         finetune: bool = False
     ) -> TransformerEmbedding:
         super().__init__()
