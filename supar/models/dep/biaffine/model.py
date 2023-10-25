@@ -352,7 +352,7 @@ class BiaffineDependencyWAttentionsModel(Model):
                  scale=0,
                  pad_index=0,
                  unk_index=1,
-                 atten_layer=5,
+                 atten_layer=3,
                  head_for_atten=-1,
                  **kwargs):
         super().__init__(**Config().update(locals()))
