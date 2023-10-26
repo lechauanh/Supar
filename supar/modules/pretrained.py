@@ -270,7 +270,7 @@ class TransformerEmbedWithRelations(nn.Module):
         # fill attentions 
         filled_attn_scores = attention_scores.new_zeros(*expand_mask.shape).masked_scatter_(expand_mask,
                                                                                             masked_attentions[temp_att_mask])
-        filled_attn_scores[filled_attn_scores == -1e-9] = 0
+        # filled_attn_scores[filled_attn_scores == -1e-9] = 0
         # reshape attentions to batch_sizexnum_headsxnum_toksxseq_lenxfix_len
         filled_attn_scores = filled_attn_scores.reshape(batch_size, num_heads, num_tokens, mask.shape[1], mask.shape[-1])
         # currently consider mean summerize over subwords only
